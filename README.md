@@ -8,11 +8,13 @@ ROI selection, intensity measurements, and background subtraction are all done w
 # About the output/fast mode
 The code allows the user to batch analyze csv files exported from FLIMage. Each of the output files will contain the data from all the csv files, with each csv being represented by a different column. Running the code in fast mode allows users to omit assigning titles to these columns and subs in temp headings to all the columns, while choosing not to run in fast mode will allow the user to assign a column header corresponding to each csv for easy referencing later on. In either case where, the order of columns represents the order of the csv files in the original location.
 
+If the user instead indicates they have a file with multiple ROIs, then batch analysis is not availble. Instead each column in the output files will correspond to a different ROI (in order).
+
 # Instructions for use:
 1. Open the code in Matlab
 2. Run the code
 3. In the command window of MATLAB the use will be asked if they are analyzing mutliple ROIs from a single file. 
-4. The response from the user will prompt a user interface where the user can select the file to analyze. If the user indicated there was only one ROI, then they may select only one file. If the user indicated
+4. The response from the user will prompt a user interface where the user can select the file to analyze. If the user indicated there was only one ROI, then they may select only one file. If the user indicated multiple ROIs then only one file may be selected and each column of the output files will represent a different ROI.
 5. The user will be asked if they want to specify an Fo value. If they do not specify a value then they will be asked the frame rate of their data and how many seconds they want to use as the baseline. A frame rate look up table is provided in the command window with common rates used by our lab for convenience, you can add your own information to this window by editing the code between lines 102 and 103. Then they will be asked how many seconds they want to use for the baseline. The program converts this information into a number of frames to be used for baseline calculations.
 6. The user will be asked if they want to average.
 7. The user will be asked if they want to run in fast mode. if yes, the code will continue and finish. If no, the user will be show the name of each csv and be asked for input on the appropriate header for column in the excel file where that csv's output data will be stored. Then the code will continue and finish.
